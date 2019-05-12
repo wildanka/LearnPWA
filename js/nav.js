@@ -14,6 +14,22 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.topnav, .sidenav').forEach(function(elm) {
           elm.innerHTML = xhttp.responseText;
         });
+
+        // register the event listener for every menu link
+        document
+          .querySelectorAll('.sidenav a, .topnav a')
+          .forEach(function(elm) {
+            elm.addEventListener('click', function(evt) {
+              //close the sidenav
+              var sidenav = document.querySelector('.sidenav');
+              M.Sidenav.getInstance(sidenav).close();
+
+              //load the content of the called page
+              page = event.target.getAttribute('href').substr(1);
+              console.log('load navigation of ' + page);
+              loadPage(page);
+            });
+          });
       }
     };
     xhttp.open('GET', 'nav.html', true);
@@ -22,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var page = window.location.hash.substr(1);
   if (page == '') page = 'home';
-  loadPage();
+  loadPage(page);
 
-  function loadPage() {
+  function loadPage(page) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4) {
@@ -38,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     };
+    console.log('will show ' + page);
     xhttp.open('GET', 'pages/' + page + '.html', true);
     xhttp.send();
   }
