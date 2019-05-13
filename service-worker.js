@@ -6,11 +6,14 @@ var urlsToCache = [
   '/pages/home.html',
   '/pages/about.html',
   '/pages/contact.html',
+  '/pages/portfolio.html',
   '/css/materialize.min.css',
   '/js/materialize.min.js',
   '/js/nav.js',
   '/icon.png',
-  '/assets/deadpool.jpg'
+  '/wk.jpg',
+  '/assets/deadpool.jpg',
+  '/assets/telephone.png'
 ];
 
 self.addEventListener('install', function(event) {

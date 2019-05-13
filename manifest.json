@@ -4,13 +4,13 @@
   "description": "Aplikasi PWA pertama saya",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#00897B",
-  "theme_color": "#00897B",
+  "background_color": "#091638",
+  "theme_color": "#091638",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "wk.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ]
 }
