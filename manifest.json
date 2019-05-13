@@ -1,6 +1,6 @@
 {
-  "name": "My First PWA",
-  "short_name": "My PWA",
+  "name": "Wildan Kurniadi",
+  "short_name": "Learning PWA",
   "description": "Aplikasi PWA pertama saya",
   "start_url": "/index.html",
   "display": "standalone",
