@@ -26,7 +26,7 @@ function triggerPromise(input) {
 }
 
 function addMarketkoin(message) {
-  return message + ' from Marketkoingit!';
+  return message + ' from Marketkoin!';
 }
 
 /**
@@ -45,4 +45,26 @@ function nestingThen() {
     .catch(function(error) {
       console.log(error);
     });
+}
+
+/**
+ * Contoh terakhir yang cukup penting dalam penggunaan Promise adalah Promise.all() di mana kita dapat mengeksekusi beberapa function dan Promise dalam sekali waktu. Dengan menggunakan contoh di atas, bila kita gunakan Promise.all() akan seperti berikut:
+ */
+function promiseAllExample(nama) {
+  var promises = Promise.all([
+    helloWorld('Kresna Galuh'),
+    helloWorld(''),
+    helloWorld('Ahmad Oriza')
+      .then(function(result) {
+        return result;
+      })
+      .then(function(result2) {
+        var message = addCodepolitan(result2);
+        return message;
+      })
+  ]);
+
+  promises.then(function(results) {
+    console.log(results + ' ' + nama);
+  });
 }
